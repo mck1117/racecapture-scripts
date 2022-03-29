@@ -12,7 +12,7 @@ function onTick()
 
     if currentLapNumber ~= lastLapNumber then
         -- We've just crossed start/finish line, update stats
-        local fuelConsumed = getChannel("FuelConsumed") -- TODO channel name
+        local fuelConsumed = getChannel("FuelUsed") -- TODO channel name
         local lapFuel = fuelConsumed - lastFuelConsumed
         lastFuelConsumed = fuelConsumed
 
