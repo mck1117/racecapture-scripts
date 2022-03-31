@@ -658,7 +658,7 @@
       "track_detection": {
         "last_selected_track_id": "0",
         "last_selected_track_timestamp": "0",
-        "user_cancelled_location": "47.720795,-122.160675"
+        "user_cancelled_location": "47.626713,-121.960464"
       }
     },
     "screens": [
@@ -1539,7 +1539,7 @@
       }
     },
     "scriptCfg": {
-      "data": "",
+      "data": "-- tank holds 30kg\nlocal fuelCapacity = 30\n\nlocal lastLapNumber = 1\nlocal lastFuelConsumed = 0\n\nlocal chLapFuel = addChannel(\"LastLapFuel\", 1, 2, 0, 2, \"kg\")\nlocal chLapsRemaining = addChannel(\"Remain\", 1, 0, 0, 50)\n\nsetChannel(chLapFuel, 0)\nsetChannel(chLapsRemaining, 0)\n\nfunction onTick()\n    local currentLapNumber = getLapCount()\n\n    if currentLapNumber ~= lastLapNumber then\n        -- We've just crossed start/finish line, update stats\n        local fuelConsumed = getChannel(\"FuelUsed\") -- TODO channel name\n        local lapFuel = fuelConsumed - lastFuelConsumed\n        lastFuelConsumed = fuelConsumed\n\n        setChannel(chLapFuel, lapFuel)\n\n        -- Estimate how many laps left to consume 30kg\n        local fuelRemaining = fuelCapacity - fuelConsumed\n        setChannel(chLapsRemaining, fuelRemaining / lapFuel)\n\n        lastLapNumber = currentLapNumber\n    end\nend\n\nsetTickRate(10)\n",
       "page": null
     },
     "sdLogCtrlCfg": {

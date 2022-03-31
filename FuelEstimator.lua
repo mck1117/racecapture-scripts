@@ -5,7 +5,10 @@ local lastLapNumber = 1
 local lastFuelConsumed = 0
 
 local chLapFuel = addChannel("LastLapFuel", 1, 2, 0, 2, "kg")
-local chLapsRemaining = addChannel("LapsRemaining", 1, 0, 0, 50)
+local chLapsRemaining = addChannel("Remain", 1, 0, 0, 50)
+
+setChannel(chLapFuel, 0)
+setChannel(chLapsRemaining, 0)
 
 function onTick()
     local currentLapNumber = getLapCount()
