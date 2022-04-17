@@ -230,7 +230,7 @@
               }
             },
             "size_hint_x": 0.2177734375,
-            "size_hint_y": 0.10579243765084474
+            "size_hint_y": 0.10579243765084476
           },
           {
             "center_x": 0.81494140625,
@@ -1251,6 +1251,27 @@
           "subId": -1,
           "type": 0,
           "ut": "g/s"
+        },
+        {
+          "add": -40.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 1.0,
+          "filtId": 0,
+          "id": 515,
+          "idMask": 0,
+          "len": 1,
+          "max": 130,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "RadTemp",
+          "offset": 5,
+          "prec": 0,
+          "sr": 1,
+          "subId": -1,
+          "type": 0,
+          "ut": "C"
         }
       ],
       "en": 1
