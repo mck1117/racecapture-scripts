@@ -615,6 +615,7 @@
     },
     "gauge_settings": {},
     "general_prefs": {
+      "analysis_map": {},
       "analysis_preferences": {
         "selected_analysis_channels": "Speed",
         "selected_sessions_laps": "{\"sessions\":{}}"
@@ -1318,7 +1319,7 @@
         "pass": ""
       },
       "cellCfg": {
-        "apnHost": "broadband",
+        "apnHost": "VZWINTERNET",
         "apnPass": "",
         "apnUser": "",
         "cellEn": 1
