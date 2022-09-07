@@ -96,7 +96,7 @@
           },
           {
             "center_x": 0.11279296875,
-            "center_y": 0.3932019308125503,
+            "center_y": 0.3932019308125502,
             "config": {
               "Channel": {
                 "channel": "OilPress",
@@ -124,7 +124,7 @@
           },
           {
             "center_x": 0.1123046875,
-            "center_y": 0.2067578439259855,
+            "center_y": 0.20675784392598553,
             "config": {
               "Channel": {
                 "channel": "OilTemp",
@@ -622,7 +622,7 @@
       "dashboard_preferences": {
         "alerts_dwell_time": "2",
         "alerts_minimize_time": "5",
-        "last_dash_screen": "dashboard_fd02a892-d2fb-11ea-b330-60a44c5f184c",
+        "last_dash_screen": "dashboard_e0978240-af0d-11eb-a2a0-f402280c61c7",
         "pitstoptimer_alert_speed": "25",
         "pitstoptimer_enabled": "1",
         "pitstoptimer_exit_speed": "55",
@@ -632,6 +632,7 @@
         "remote_dash_nav_enabled": "1"
       },
       "help": {
+        "analysis_welcome": "False",
         "can_mapping_help": "False",
         "dashboard_gauge_help": "False",
         "lap_setup": "False",
@@ -645,7 +646,7 @@
         "firmware_dir": "C:\\Users\\Documents",
         "global_help": "True",
         "import_datalog_dir": "C:\\Users\\Documents",
-        "last_known_device": "COM4",
+        "last_known_device": "COM12",
         "record_session": "1",
         "send_telemetry": "0",
         "show_laptimes": "1",
@@ -717,12 +718,12 @@
     "canCfg": {
       "baud": [
         500000,
-        1000000
+        500000
       ],
       "en": 1,
       "term": [
         1,
-        1
+        0
       ]
     },
     "canChanCfg": {
@@ -900,27 +901,6 @@
           "bigEndian": false,
           "bm": false,
           "bus": 0,
-          "div": 2.0,
-          "filtId": 0,
-          "id": 515,
-          "idMask": 0,
-          "len": 1,
-          "max": 100,
-          "min": 0,
-          "mult": 1.0,
-          "nm": "FuelLevel",
-          "offset": 7,
-          "prec": 0,
-          "sr": 1,
-          "subId": -1,
-          "type": 0,
-          "ut": "F"
-        },
-        {
-          "add": 0.0,
-          "bigEndian": false,
-          "bm": false,
-          "bus": 0,
           "div": 1000.0,
           "filtId": 0,
           "id": 516,
@@ -953,7 +933,7 @@
           "nm": "OilPress",
           "offset": 2,
           "prec": 0,
-          "sr": 5,
+          "sr": 25,
           "subId": -1,
           "type": 0,
           "ut": "PSI"
@@ -995,7 +975,7 @@
           "nm": "InjectorPW",
           "offset": 4,
           "prec": 1,
-          "sr": 10,
+          "sr": 5,
           "subId": -1,
           "type": 1,
           "ut": "ms"
@@ -1016,7 +996,7 @@
           "nm": "Battery",
           "offset": 6,
           "prec": 2,
-          "sr": 10,
+          "sr": 25,
           "subId": -1,
           "type": 0,
           "ut": "Volts"
@@ -1067,7 +1047,7 @@
           "add": 0.0,
           "bigEndian": false,
           "bm": false,
-          "bus": 1,
+          "bus": 0,
           "div": 10000000.0,
           "filtId": 0,
           "id": 100,
@@ -1079,7 +1059,7 @@
           "nm": "Latitude",
           "offset": 0,
           "prec": 6,
-          "sr": 10,
+          "sr": 25,
           "subId": -1,
           "type": 0,
           "ut": "Degrees"
@@ -1088,7 +1068,7 @@
           "add": 0.0,
           "bigEndian": false,
           "bm": false,
-          "bus": 1,
+          "bus": 0,
           "div": -10000000.0,
           "filtId": 0,
           "id": 100,
@@ -1100,7 +1080,7 @@
           "nm": "Longitude",
           "offset": 4,
           "prec": 6,
-          "sr": 10,
+          "sr": 25,
           "subId": -1,
           "type": 0,
           "ut": "Degrees"
@@ -1109,7 +1089,7 @@
           "add": 0.0,
           "bigEndian": false,
           "bm": false,
-          "bus": 1,
+          "bus": 0,
           "div": 1.0,
           "filtId": 0,
           "id": 101,
@@ -1121,7 +1101,7 @@
           "nm": "Speed",
           "offset": 0,
           "prec": 2,
-          "sr": 10,
+          "sr": 25,
           "subId": -1,
           "type": 0,
           "ut": "MPH"
@@ -1226,7 +1206,7 @@
           "nm": "FuelUsed",
           "offset": 0,
           "prec": 2,
-          "sr": 1,
+          "sr": 25,
           "subId": -1,
           "type": 0,
           "ut": "kg"
@@ -1247,7 +1227,7 @@
           "nm": "FuelRate",
           "offset": 2,
           "prec": 2,
-          "sr": 10,
+          "sr": 5,
           "subId": -1,
           "type": 0,
           "ut": "g/s"
@@ -1272,6 +1252,27 @@
           "subId": -1,
           "type": 0,
           "ut": "C"
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 1.0,
+          "filtId": 0,
+          "id": 517,
+          "idMask": 0,
+          "len": 2,
+          "max": 1000,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "KnockCount",
+          "offset": 6,
+          "prec": 0,
+          "sr": 5,
+          "subId": -1,
+          "type": 0,
+          "ut": ""
         }
       ],
       "en": 1
@@ -1357,12 +1358,12 @@
       }
     },
     "gpsCfg": {
-      "alt": false,
-      "dop": false,
-      "pos": false,
-      "qual": false,
-      "sats": false,
-      "speed": false,
+      "alt": 0,
+      "dop": 0,
+      "pos": 0,
+      "qual": 0,
+      "sats": 0,
+      "speed": 0,
       "sr": 10
     },
     "imuCfg": {
@@ -1560,7 +1561,7 @@
       }
     },
     "scriptCfg": {
-      "data": "-- tank holds 30kg\nlocal fuelCapacity = 30\n\nlocal lastLapNumber = 1\nlocal lastFuelConsumed = 0\n\nlocal chLapFuel = addChannel(\"LastLapFuel\", 1, 2, 0, 2, \"kg\")\nlocal chLapsRemaining = addChannel(\"Remain\", 1, 0, 0, 50)\n\nsetChannel(chLapFuel, 0)\nsetChannel(chLapsRemaining, 0)\n\nfunction onTick()\n    local currentLapNumber = getLapCount()\n\n    if currentLapNumber ~= lastLapNumber then\n        -- We've just crossed start/finish line, update stats\n        local fuelConsumed = getChannel(\"FuelUsed\") -- TODO channel name\n        local lapFuel = fuelConsumed - lastFuelConsumed\n        lastFuelConsumed = fuelConsumed\n\n        setChannel(chLapFuel, lapFuel)\n\n        -- Estimate how many laps left to consume 30kg\n        local fuelRemaining = fuelCapacity - fuelConsumed\n        setChannel(chLapsRemaining, fuelRemaining / lapFuel)\n\n        lastLapNumber = currentLapNumber\n    end\nend\n\nsetTickRate(10)\n",
+      "data": "-- tank holds 30kg\nlocal fuelCapacity = 30\n\nlocal lastLapNumber = 1\nlocal lastFuelConsumed = 0\n\nlocal chLapFuel = addChannel(\"LastLapFuel\", 1, 2, 0, 2, \"kg\")\nlocal chLapsRemaining = addChannel(\"Remain\", 1, 0, 0, 50)\n\nsetChannel(chLapFuel, 0)\nsetChannel(chLapsRemaining, 0)\n\nfunction onTick()\n    local currentLapNumber = getLapCount()\n\n    if currentLapNumber ~= lastLapNumber then\n        -- We've just crossed start/finish line, update stats\n        local fuelConsumed = getChannel('FuelUsed')\n        local lapFuel = fuelConsumed - lastFuelConsumed\n        lastFuelConsumed = fuelConsumed\n\n        setChannel(chLapFuel, lapFuel)\n\n        -- Estimate how many laps left to consume 30kg\n        local fuelRemaining = fuelCapacity - fuelConsumed\n        setChannel(chLapsRemaining, fuelRemaining / lapFuel)\n\n        lastLapNumber = currentLapNumber\n    end\nend\n\nsetTickRate(5)",
       "page": null
     },
     "sdLogCtrlCfg": {
