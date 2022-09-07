@@ -60,7 +60,59 @@
         "channel": "Speed"
       }
     },
-    "analysis": {},
+    "analysis": {
+      "dashboard_fd02a892-d2fb-11ea-b330-60a44c5f184c": {
+        "dash_name": "Map/Speed/Traction",
+        "dash_type": "flowgauge",
+        "gauges": [
+          [
+            {
+              "config": {
+                "Gauge Type": {
+                  "gauge": "Track Map"
+                },
+                "Heat": {},
+                "Track": {
+                  "last_center": [
+                    39.540863,
+                    -122.33139
+                  ]
+                }
+              }
+            },
+            {
+              "config": {
+                "Gauge Type": {
+                  "gauge": "Scatter Plot"
+                },
+                "Heat": {},
+                "X Axis": {
+                  "channel": "AccelX"
+                },
+                "Y Axis": {
+                  "channel": "AccelY"
+                }
+              }
+            }
+          ],
+          [
+            {
+              "config": {
+                "Channel": {
+                  "channel": [
+                    "Speed"
+                  ]
+                },
+                "Gauge Type": {
+                  "gauge": "Line Chart"
+                }
+              }
+            }
+          ]
+        ],
+        "locked": false
+      }
+    },
     "dashboard": {
       "dashboard_e0978240-af0d-11eb-a2a0-f402280c61c7": {
         "dash_name": "RPM + 3x gauge",
@@ -68,7 +120,7 @@
         "gauges": [
           {
             "center_x": 0.4990234375,
-            "center_y": 0.834070796460177,
+            "center_y": 0.8340707964601769,
             "config": {
               "Channel": {
                 "channel": "RPM",
@@ -615,7 +667,6 @@
     },
     "gauge_settings": {},
     "general_prefs": {
-      "analysis_map": {},
       "analysis_preferences": {
         "selected_analysis_channels": "Speed",
         "selected_sessions_laps": "{\"sessions\":{}}"
@@ -623,7 +674,7 @@
       "dashboard_preferences": {
         "alerts_dwell_time": "2",
         "alerts_minimize_time": "5",
-        "last_dash_screen": "dashboard_e0978240-af0d-11eb-a2a0-f402280c61c7",
+        "last_dash_screen": "dashboard_fd02a892-d2fb-11ea-b330-60a44c5f184c",
         "pitstoptimer_alert_speed": "25",
         "pitstoptimer_enabled": "1",
         "pitstoptimer_exit_speed": "55",
@@ -1105,7 +1156,7 @@
           "sr": 25,
           "subId": -1,
           "type": 0,
-          "ut": "MPH"
+          "ut": "KPH"
         },
         {
           "add": 0.0,
@@ -1274,6 +1325,48 @@
           "subId": -1,
           "type": 0,
           "ut": ""
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 1.0,
+          "filtId": 0,
+          "id": 101,
+          "idMask": 0,
+          "len": 1,
+          "max": 20,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "GPSSats",
+          "offset": 2,
+          "prec": 0,
+          "sr": 25,
+          "subId": -1,
+          "type": 0,
+          "ut": ""
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 1.0,
+          "filtId": 0,
+          "id": 101,
+          "idMask": 0,
+          "len": 1,
+          "max": 5,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "GPSQual",
+          "offset": 1,
+          "prec": 0,
+          "sr": 25,
+          "subId": -1,
+          "type": 0,
+          "ut": ""
         }
       ],
       "en": 1
@@ -1319,7 +1412,7 @@
         "pass": ""
       },
       "cellCfg": {
-        "apnHost": "VZWINTERNET",
+        "apnHost": "vzwinternet",
         "apnPass": "",
         "apnUser": "",
         "cellEn": 1
