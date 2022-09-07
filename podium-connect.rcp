@@ -194,7 +194,7 @@
           },
           {
             "center_x": 0.11181640625,
-            "center_y": 0.05752212389380539,
+            "center_y": 0.0575221238938054,
             "config": {
               "Channel": {
                 "channel": "FuelUsed",
@@ -246,7 +246,7 @@
           },
           {
             "center_x": 0.43896484375,
-            "center_y": 0.42658889782783577,
+            "center_y": 0.4265888978278357,
             "config": {
               "Channel": {
                 "channel": "PredTime",
@@ -343,7 +343,7 @@
               }
             },
             "size_hint_x": 0.3251953125,
-            "size_hint_y": 0.2325020112630732
+            "size_hint_y": 0.23250201126307318
           }
         ],
         "locked": true
@@ -1110,7 +1110,7 @@
           "add": 0.0,
           "bigEndian": false,
           "bm": false,
-          "bus": 1,
+          "bus": 0,
           "div": 50.0,
           "filtId": 0,
           "id": 102,
@@ -1131,7 +1131,7 @@
           "add": 0.0,
           "bigEndian": false,
           "bm": false,
-          "bus": 1,
+          "bus": 0,
           "div": 50.0,
           "filtId": 0,
           "id": 102,
@@ -1358,12 +1358,12 @@
       }
     },
     "gpsCfg": {
-      "alt": 0,
-      "dop": 0,
-      "pos": 0,
-      "qual": 0,
-      "sats": 0,
-      "speed": 0,
+      "alt": false,
+      "dop": false,
+      "pos": false,
+      "qual": false,
+      "sats": false,
+      "speed": false,
       "sr": 10
     },
     "imuCfg": {
@@ -1801,11 +1801,11 @@
       ]
     },
     "ver": {
-      "bugfix": 9,
+      "bugfix": 7,
       "fname": "PodiumConnect",
-      "git_info": "2.17.9",
+      "git_info": "2.18.7",
       "major": 2,
-      "minor": 17,
+      "minor": 18,
       "name": "PC_MK1"
     },
     "wifiCfg": {
