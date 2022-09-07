@@ -667,7 +667,6 @@
     },
     "gauge_settings": {},
     "general_prefs": {
-      "analysis_map": {},
       "analysis_preferences": {
         "selected_analysis_channels": "Speed",
         "selected_sessions_laps": "{\"sessions\":{}}"
@@ -1066,7 +1065,7 @@
       }
     },
     "scriptCfg": {
-      "data": "setTickRate(25)\n\nfunction onTick()\n local lat,lon = getGpsPos()\n local latInt = math.floor(lat*10000000)\n local lonInt = -math.floor(lon*10000000)\n\n local lat1 = bit.band(latInt, 255);\n latInt = bit.rshift(latInt, 8);\n local lat2 = bit.band(latInt, 255);\n latInt = bit.rshift(latInt, 8);\n local lat3 = bit.band(latInt, 255);\n latInt = bit.rshift(latInt, 8);\n local lat4 = bit.band(latInt, 255);\n\n local lon1 = bit.band(lonInt, 255);\n lonInt = bit.rshift(lonInt, 8);\n local lon2 = bit.band(lonInt, 255);\n lonInt = bit.rshift(lonInt, 8);\n local lon3 = bit.band(lonInt, 255);\n lonInt = bit.rshift(lonInt, 8);\n local lon4 = bit.band(lonInt, 255);\n\n txCAN(0, 100, 0, {lat1, lat2, lat3, lat4, lon1, lon2, lon3, lon4}) \n\n txCAN(0, 101, 0, {getGpsSpeed(), getGpsQuality(), getGpsSats()})\n\n local gx = math.floor(50*getImu(0))\n local gy = math.floor(50*getImu(1))\n local gz = math.floor(50*getImu(2))\n local rz = math.floor(50*getImu(3))\n\n if (gx < 0) then gx=256+gx end\n if (gy < 0) then gy=256+gy end\n\n txCAN(0, 102, 0, {gx, gy})\nend\n",
+      "data": "setTickRate(25)\n\nfunction onTick()\n local lat,lon = getGpsPos()\n local latInt = math.floor(lat*10000000)\n local lonInt = -math.floor(lon*10000000)\n\n local lat1 = bit.band(latInt, 255);\n latInt = bit.rshift(latInt, 8);\n local lat2 = bit.band(latInt, 255);\n latInt = bit.rshift(latInt, 8);\n local lat3 = bit.band(latInt, 255);\n latInt = bit.rshift(latInt, 8);\n local lat4 = bit.band(latInt, 255);\n\n local lon1 = bit.band(lonInt, 255);\n lonInt = bit.rshift(lonInt, 8);\n local lon2 = bit.band(lonInt, 255);\n lonInt = bit.rshift(lonInt, 8);\n local lon3 = bit.band(lonInt, 255);\n lonInt = bit.rshift(lonInt, 8);\n local lon4 = bit.band(lonInt, 255);\n\n txCAN(0, 100, 0, {lat1, lat2, lat3, lat4, lon1, lon2, lon3, lon4}) \n\n txCAN(0, 101, 0, {getGpsSpeed(), getGpsQuality(), getGpsSats(), 0.304 * getGpsAltitude(), 2})\n\n local gx = math.floor(50*getImu(0))\n local gy = math.floor(50*getImu(1))\n local gz = math.floor(50*getImu(2))\n local rz = math.floor(50*getImu(3))\n\n if (gx < 0) then gx=256+gx end\n if (gy < 0) then gy=256+gy end\n\n txCAN(0, 102, 0, {gx, gy})\nend\n",
       "page": null
     },
     "sdLogCtrlCfg": {
