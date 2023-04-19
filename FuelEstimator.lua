@@ -1,5 +1,5 @@
--- tank holds 30kg
-local fuelCapacity = 30
+-- tank holds 54kg
+local fuelCapacity = 54
 
 local lastLapNumber = 1
 local lastFuelConsumed = 0
@@ -15,18 +15,23 @@ function onTick()
 
     if currentLapNumber ~= lastLapNumber then
         -- We've just crossed start/finish line, update stats
-        local fuelConsumed = getChannel("FuelUsed") -- TODO channel name
+        local fuelConsumed = getChannel('FuelUsed')
         local lapFuel = fuelConsumed - lastFuelConsumed
         lastFuelConsumed = fuelConsumed
 
         setChannel(chLapFuel, lapFuel)
 
-        -- Estimate how many laps left to consume 30kg
+        -- Estimate how many laps left to consume 54kg
         local fuelRemaining = fuelCapacity - fuelConsumed
-        setChannel(chLapsRemaining, fuelRemaining / lapFuel)
+  local lapsRemain = fuelRemaining / lapFuel
+
+  -- grrr sometimes math goes haywire
+  if lapsRemain > 1000 then lapsRemain = 0 end
+
+        setChannel(chLapsRemaining, lapsRemain)
 
         lastLapNumber = currentLapNumber
     end
 end
 
-setTickRate(10)
+setTickRate(5)
