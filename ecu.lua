@@ -7,6 +7,20 @@ function wakeMk60()
 	-- txCan(1, 0x615, 0, { 0x00, 0x00, 0x00, 0x0d, 0x03, 0x00, 0x00, 0x00 });
 end
 
+function sendExtraCanData()
+	local coolantPressure = getSensor('AuxLinear1')
+	if coolantPressure == nil then coolantPressure = 0 end
+
+	local gear = getSensor('DetectedGear')
+	if gear == nil then gear = -1 end
+
+	-- float switch indicates ~0 for "not low" and ~100 for "low"
+	local fuelSensor = getSensor('AuxLinear2')
+	if fuelSensor == nil then fuelSensor = -1 end
+
+	txCan(1, 0x210, 0, { coolantPressure, gear, fuelSensor })
+end
+
 -- "alive" message from pump
 canRxAdd(0x1B200002)
 
@@ -36,6 +50,8 @@ local slowRollTable = { 0x00, 0x40, 0x80, 0xC0 }
 local speedVal = 6000
 
 local wakemk60counter = 0
+
+local canDataCounter = 0
 
 function onTick()
 	if pumpAlive:getElapsedSeconds() < 1 then
@@ -70,8 +86,14 @@ function onTick()
 		wakeMk60()
 		wakemk60counter = 142
 	end
-
 	wakemk60counter = wakemk60counter - 1
+
+	-- Send extra ECU data at 10hz
+	if canDataCounter == 0 then
+		sendExtraCanData()
+		canDataCounter = 7
+	end
+	canDataCounter = canDataCounter - 1
 end
 
 setTickRate(71)
