@@ -5,9 +5,13 @@ startPwm(1, 0, 0)
 
 -- "alive" message from pump
 canRxAdd(0x1B200002)
+canRxAdd(0x1a0)
 
 local pumpAlive = Timer.new()
 local pumpRestart = Timer.new()
+
+local vssSensor = Sensor.new("VehicleSpeed")
+vssSensor:setTimeout(100)
 
 function onCanRx(bus, id, dlc, data)
 	if id == 0x1B200002 then
@@ -16,6 +20,11 @@ function onCanRx(bus, id, dlc, data)
 		end
 
 		pumpAlive:reset()
+	end
+
+	if id == 0x1a0 then
+		local vss = 0.1 * (data[1] + ((data[2] & 0x0F) << 8))
+		vssSensor:set(vss)
 	end
 end
 
