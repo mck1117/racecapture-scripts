@@ -1,17 +1,7 @@
+-- PWM0: ABS fault light
 startPwm(0, 0, 0)
-
-function updateBrakeOutput()
-	local brakeVoltage = getAuxAnalog(0)
-
-	-- above 3v we assume brake is on
-	if brakeVoltage > 3 then
-		-- Braking = float = disable output
-		setPwmDuty(0, 0)
-	else
-		-- Not braking = short to ground = enable output
-		setPwmDuty(0, 1)
-	end
-end
+-- PWM1: EHPAS fault light
+startPwm(1, 0, 0)
 
 -- "alive" message from pump
 canRxAdd(0x1B200002)
@@ -39,7 +29,7 @@ local slowRollTable = { 0x00, 0x40, 0x80, 0xC0 }
 
 -- car stopped is 0
 -- car "moving fast" is 6000 (whatever that means?)
-local speedVal = 6000
+local speedVal = 13000
 
 function updatePowerSteering()
 	if pumpAlive:getElapsedSeconds() < 1 then
@@ -67,12 +57,21 @@ function updatePowerSteering()
 
 		-- pump speed frame
 		txCan(1, 0x02104136, 1, data_0x02104136)
+
+		-- Turn off the fault light
+		setPwmDuty(1, 1)
+	else
+		-- Turn on the fault light
+		setPwmDuty(1, 0)
 	end
 end
 
 function onTick()
-	updateBrakeOutput()
 	updatePowerSteering()
 end
 
 setTickRate(71)
+
+-- start with both fault lights on
+setPwmDuty(0, 0)
+setPwmDuty(1, 0)
