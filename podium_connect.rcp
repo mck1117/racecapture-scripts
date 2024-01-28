@@ -123,7 +123,7 @@
         "gauges": [
           {
             "center_x": 0.4990234375,
-            "center_y": 0.8340707964601769,
+            "center_y": 0.834070796460177,
             "config": {
               "Channel": {
                 "channel": "RPM",
@@ -147,7 +147,7 @@
               }
             },
             "size_hint_x": 0.99609375,
-            "size_hint_y": 0.3238133547868061
+            "size_hint_y": 0.32381335478680606
           },
           {
             "center_x": 0.11279296875,
@@ -297,7 +297,7 @@
               }
             },
             "size_hint_x": 0.2509765625,
-            "size_hint_y": 0.29082864038616263
+            "size_hint_y": 0.2908286403861626
           },
           {
             "center_x": 0.43896484375,
@@ -401,7 +401,7 @@
             "size_hint_y": 0.23250201126307316
           }
         ],
-        "locked": true
+        "locked": false
       },
       "dashboard_f4beab04-d2fb-11ea-b330-60a44c5f184c": {
         "dash_name": "Predictive Timer",
@@ -800,7 +800,7 @@
           "nm": "RPM",
           "offset": 1,
           "prec": 0,
-          "sr": 10,
+          "sr": 25,
           "subId": -1,
           "type": 0,
           "ut": ""
@@ -821,7 +821,7 @@
           "nm": "TPS",
           "offset": 4,
           "prec": 0,
-          "sr": 10,
+          "sr": 25,
           "subId": -1,
           "type": 1,
           "ut": "%"
@@ -915,16 +915,16 @@
           "bigEndian": false,
           "bm": false,
           "bus": 0,
-          "div": 1000.0,
+          "div": 10.0,
           "filtId": 0,
-          "id": 516,
+          "id": 256,
           "idMask": 0,
-          "len": 2,
+          "len": 1,
           "max": 16.0,
           "min": 10.0,
           "mult": 1.0,
           "nm": "Battery",
-          "offset": 6,
+          "offset": 0,
           "prec": 2,
           "sr": 10,
           "subId": -1,
@@ -1329,6 +1329,90 @@
           "subId": -1,
           "type": 0,
           "ut": ""
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 1.0,
+          "filtId": 0,
+          "id": 256,
+          "idMask": 0,
+          "len": 1,
+          "max": 150.0,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "PmuTempL",
+          "offset": 2,
+          "prec": 0,
+          "sr": 1,
+          "subId": -1,
+          "type": 0,
+          "ut": "C"
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 1.0,
+          "filtId": 0,
+          "id": 256,
+          "idMask": 0,
+          "len": 1,
+          "max": 150.0,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "PmuTempR",
+          "offset": 3,
+          "prec": 0,
+          "sr": 1,
+          "subId": -1,
+          "type": 0,
+          "ut": "C"
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 1.0,
+          "filtId": 0,
+          "id": 256,
+          "idMask": 0,
+          "len": 1,
+          "max": 255.0,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "PmuTotAmps",
+          "offset": 1,
+          "prec": 0,
+          "sr": 1,
+          "subId": -1,
+          "type": 0,
+          "ut": "A"
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 4.0,
+          "filtId": 0,
+          "id": 256,
+          "idMask": 0,
+          "len": 1,
+          "max": 15.0,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "FpLiftAmps",
+          "offset": 5,
+          "prec": 0,
+          "sr": 1,
+          "subId": -1,
+          "type": 0,
+          "ut": "A"
         }
       ],
       "en": 1
