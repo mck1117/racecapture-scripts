@@ -1434,6 +1434,27 @@
           "subId": -1,
           "type": 0,
           "ut": "L"
+        },
+        {
+          "add": 0.0,
+          "bigEndian": false,
+          "bm": false,
+          "bus": 0,
+          "div": 255.0,
+          "filtId": 0,
+          "id": 1017,
+          "idMask": 0,
+          "len": 1,
+          "max": 100.0,
+          "min": 0,
+          "mult": 100.0,
+          "nm": "AltnDuty",
+          "offset": 3,
+          "prec": 1.0,
+          "sr": 5,
+          "subId": -1,
+          "type": 0,
+          "ut": "%"
         }
       ],
       "en": 1
