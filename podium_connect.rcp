@@ -1413,6 +1413,27 @@
           "subId": -1,
           "type": 0,
           "ut": "A"
+        },
+        {
+          "add": 0.0,
+          "bigEndian": true,
+          "bm": false,
+          "bus": 0,
+          "div": 32768.0,
+          "filtId": 0,
+          "id": 1017,
+          "idMask": 0,
+          "len": 2,
+          "max": 2.0,
+          "min": 0,
+          "mult": 1.0,
+          "nm": "FuelUseRoll",
+          "offset": 1,
+          "prec": 3.0,
+          "sr": 5,
+          "subId": -1,
+          "type": 0,
+          "ut": "L"
         }
       ],
       "en": 1
