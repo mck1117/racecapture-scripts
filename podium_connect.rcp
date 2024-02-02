@@ -58,6 +58,10 @@
       "Speed": {
         "alert_rules": [],
         "channel": "Speed"
+      },
+      "TransTemp": {
+        "alert_rules": [],
+        "channel": "TransTemp"
       }
     },
     "analysis": {
@@ -1759,7 +1763,7 @@
     },
     "pwmCfg": {},
     "scriptCfg": {
-      "data": "-- tank holds 54kg\nlocal fuelCapacity = 54\n\nlocal lastLapNumber = 1\nlocal lastFuelConsumed = 0\n\nlocal chFuelUsed = addChannel(\"FuelUsed\", 1, 2, 0, 100, \"L\")\nlocal chLapFuel = addChannel(\"LastLapFuel\", 1, 2, 0, 2, \"L\")\nlocal chLapsRemaining = addChannel(\"Remain\", 1, 0, 0, 50)\n\nsetChannel(chLapFuel, 0)\nsetChannel(chLapsRemaining, 0)\n\nlocal lastFuelRolling = 0\nlocal fuelUseRollover = 0\n\nfunction onTick()\n    local currentLapNumber = getLapCount()\n\n\tlocal currentFuelRolling = getChannel('FuelUseRoll')\n\tif currentFuelRolling < lastFuelRolling then\n\t\t-- Either the ECU rebooted or used >2 liters of fuel\n\t\t-- Log the old rolling qty as used\n\t\tfuelUseRollover = fuelUseRollover + lastFuelRolling\n\tend\n\tlastFuelRolling = currentFuelRolling\n\n\tlocal fuelUsed = fuelUseRollover + currentFuelRolling\n\n    if currentLapNumber ~= lastLapNumber then\n        -- We've just crossed start/finish line, update stats\n        local fuelConsumed = getChannel('FuelUsed')\n        local lapFuel = fuelConsumed - lastFuelConsumed\n        lastFuelConsumed = fuelConsumed\n\n        setChannel(chLapFuel, lapFuel)\n\n        -- Estimate how many laps left to consume 54kg\n        local fuelRemaining = fuelCapacity - fuelConsumed\n  local lapsRemain = fuelRemaining / lapFuel\n\n  -- grrr sometimes math goes haywire\n  if lapsRemain > 1000 then lapsRemain = 0 end\n\n        setChannel(chLapsRemaining, lapsRemain)\n\n        lastLapNumber = currentLapNumber\n    end\nend\n\nsetTickRate(5)",
+      "data": "-- tank holds 54kg\nlocal fuelCapacity = 54\n\nlocal lastLapNumber = 1\nlocal lastFuelConsumed = 0\n\nlocal chFuelUsed = addChannel(\"FuelUsed\", 1, 2, 0, 100, \"L\")\nlocal chLapFuel = addChannel(\"LastLapFuel\", 1, 2, 0, 2, \"L\")\nlocal chLapsRemaining = addChannel(\"Remain\", 1, 0, 0, 50)\n\nsetChannel(chLapFuel, 0)\nsetChannel(chLapsRemaining, 0)\n\nlocal lastFuelRolling = 0\nlocal fuelUseRollover = 0\n\nfunction onTick()\n    local currentLapNumber = getLapCount()\n\n    local currentFuelRolling = getChannel('FuelUseRoll')\n    if currentFuelRolling < lastFuelRolling then\n        -- Either the ECU rebooted or used >2 liters of fuel\n        -- Log the old rolling qty as used\n        fuelUseRollover = fuelUseRollover + lastFuelRolling\n    end\n    lastFuelRolling = currentFuelRolling\n\n    local fuelConsumed = fuelUseRollover + currentFuelRolling\n    setChannel(chFuelUsed, fuelConsumed)\n\n    if currentLapNumber ~= lastLapNumber then\n        -- We've just crossed start/finish line, update stats\n        local lapFuel = fuelConsumed - lastFuelConsumed\n        lastFuelConsumed = fuelConsumed\n\n        setChannel(chLapFuel, lapFuel)\n\n        -- Estimate how many laps left to consume 54kg\n        local fuelRemaining = fuelCapacity - fuelConsumed\n        local lapsRemain = fuelRemaining / lapFuel\n\n        -- grrr sometimes math goes haywire\n        if lapsRemain > 1000 then lapsRemain = 0 end\n\n        setChannel(chLapsRemaining, lapsRemain)\n\n        lastLapNumber = currentLapNumber\n    end\nend\n\nsetTickRate(5)",
       "page": null
     },
     "sdLogCtrlCfg": {
