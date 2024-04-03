@@ -34,5 +34,5 @@ function onTick()
 	if (gz < 0) then gz=256+gz end
 	if (rz < 0) then rz=256+rz end
 
-	txCAN(0, 101, 0, {gx, gy, gz, rz, speed})
+	txCAN(0, 101, 0, {gx, gy, gz, rz, speed, getGpsQuality(), getGpsSats()})
 end
