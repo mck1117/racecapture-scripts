@@ -1,0 +1,1828 @@
+{
+  "alerts": {
+    "Battery": {
+      "alert_rules": [
+        {
+          "activate_sec": 1.0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "message": "BattHigh!",
+                "shape": "triangle"
+              }
+            }
+          ],
+          "deactivate_sec": 10.0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 16.0,
+          "range_type": ">="
+        },
+        {
+          "activate_sec": 10.0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "message": "BattLow",
+                "shape": null
+              }
+            }
+          ],
+          "deactivate_sec": 10.0,
+          "enabled": true,
+          "high_threshold": 12.0,
+          "low_threshold": null,
+          "range_type": "<="
+        }
+      ],
+      "channel": "Battery"
+    },
+    "Boost": {
+      "alert_rules": [
+        {
+          "activate_sec": 0,
+          "alert_actions": [],
+          "deactivate_sec": 0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 0.0,
+          "range_type": ">="
+        }
+      ],
+      "channel": "Boost"
+    },
+    "CoolPress": {
+      "alert_rules": [
+        {
+          "activate_sec": 1.0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "message": "CoolPress_HIGH!",
+                "shape": null
+              }
+            }
+          ],
+          "deactivate_sec": 10.0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 30.0,
+          "range_type": ">="
+        }
+      ],
+      "channel": "CoolPress"
+    },
+    "Coolant": {
+      "alert_rules": [
+        {
+          "activate_sec": 2.0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "message": "HOT",
+                "shape": null
+              }
+            }
+          ],
+          "deactivate_sec": 0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 107.0,
+          "range_type": ">="
+        }
+      ],
+      "channel": "Coolant"
+    },
+    "CurrentLap": {
+      "alert_rules": [],
+      "channel": "CurrentLap"
+    },
+    "FuelLevel": {
+      "alert_rules": [],
+      "channel": "FuelLevel"
+    },
+    "FuelLow": {
+      "alert_rules": [],
+      "channel": "FuelLow"
+    },
+    "FuelUsed": {
+      "alert_rules": [],
+      "channel": "FuelUsed"
+    },
+    "Gear": {
+      "alert_rules": [],
+      "channel": "Gear"
+    },
+    "KnockCount": {
+      "alert_rules": [
+        {
+          "activate_sec": 0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "message": "KnockCountHigh",
+                "shape": null
+              }
+            }
+          ],
+          "deactivate_sec": 10.0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 100.0,
+          "range_type": ">="
+        }
+      ],
+      "channel": "KnockCount"
+    },
+    "LamProtect": {
+      "alert_rules": [
+        {
+          "activate_sec": 0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  0.8,
+                  0.30000000000000004,
+                  0.0,
+                  1.0
+                ],
+                "message": "LambdaLean",
+                "shape": "triangle"
+              }
+            }
+          ],
+          "deactivate_sec": 0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 0.5,
+          "range_type": ">="
+        }
+      ],
+      "channel": "LamProtect"
+    },
+    "Lambda": {
+      "alert_rules": [],
+      "channel": "Lambda"
+    },
+    "LapTime": {
+      "alert_rules": [],
+      "channel": "LapTime"
+    },
+    "OilPress": {
+      "alert_rules": [
+        {
+          "activate_sec": 1.0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "message": "OilP",
+                "shape": null
+              }
+            }
+          ],
+          "deactivate_sec": 0,
+          "enabled": true,
+          "high_threshold": 2.0,
+          "low_threshold": null,
+          "range_type": "<="
+        }
+      ],
+      "channel": "OilPress"
+    },
+    "OilTemp": {
+      "alert_rules": [
+        {
+          "activate_sec": 10.0,
+          "alert_actions": [
+            {
+              "popup_alertaction": {
+                "color": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "message": "OilHot",
+                "shape": null
+              }
+            }
+          ],
+          "deactivate_sec": 0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 125.0,
+          "range_type": ">="
+        }
+      ],
+      "channel": "OilTemp"
+    },
+    "PredTime": {
+      "alert_rules": [],
+      "channel": "PredTime"
+    },
+    "RPM": {
+      "alert_rules": [
+        {
+          "activate_sec": 0,
+          "alert_actions": [],
+          "deactivate_sec": 0,
+          "enabled": true,
+          "high_threshold": null,
+          "low_threshold": 0.0,
+          "range_type": ">="
+        }
+      ],
+      "channel": "RPM"
+    },
+    "RevLimit": {
+      "alert_rules": [],
+      "channel": "RevLimit"
+    },
+    "SessionTime": {
+      "alert_rules": [],
+      "channel": "SessionTime"
+    },
+    "Speed": {
+      "alert_rules": [],
+      "channel": "Speed"
+    },
+    "SteerLevel": {
+      "alert_rules": [],
+      "channel": "SteerLevel"
+    },
+    "TransTemp": {
+      "alert_rules": [],
+      "channel": "TransTemp"
+    },
+    "WS_LF": {
+      "alert_rules": [],
+      "channel": "WS_LF"
+    }
+  },
+  "analysis": {
+    "dashboard_fd02a892-d2fb-11ea-b330-60a44c5f184c": {
+      "dash_name": "Map/Speed/Traction",
+      "dash_type": "flowgauge",
+      "gauges": [
+        [
+          {
+            "config": {
+              "Gauge Type": {
+                "gauge": "Track Map"
+              },
+              "Heat": {},
+              "Track": {
+                "last_center": [
+                  39.540863,
+                  -122.33139
+                ]
+              }
+            }
+          },
+          {
+            "config": {
+              "Gauge Type": {
+                "gauge": "Scatter Plot"
+              },
+              "Heat": {},
+              "X Axis": {
+                "channel": "AccelX"
+              },
+              "Y Axis": {
+                "channel": "AccelY"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "config": {
+              "Channel": {
+                "channel": [
+                  "Speed"
+                ]
+              },
+              "Gauge Type": {
+                "gauge": "Line Chart"
+              }
+            }
+          }
+        ]
+      ],
+      "locked": false
+    }
+  },
+  "dashboard": {
+    "dashboard_e0978240-af0d-11eb-a2a0-f402280c61c7": {
+      "dash_name": "Main",
+      "dash_type": "freeform",
+      "gauges": [
+        {
+          "center_x": 0.4990234375,
+          "center_y": 0.8340707964601767,
+          "config": {
+            "Channel": {
+              "channel": "RPM",
+              "overrides": {
+                "RPM": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.025,
+                    0.2,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 7200.0,
+                  "min_value": 3000.0,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Bargraph"
+            },
+            "Settings": {
+              "visual_settings": {
+                "background_color": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "background_encoded_image": "",
+                "central_markers_color": [
+                  [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                ],
+                "central_markers_font_size_pct": [
+                  0.5,
+                  0.1
+                ],
+                "central_markers_offsets_pct": [
+                  [
+                    0.0,
+                    0.5
+                  ],
+                  [
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_alert_element": "background",
+                "channel_value_multiplier": 1,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "label_markers_color": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "label_markers_font_name": "resource/fonts/ASL_regular.ttf",
+                "label_markers_font_size_pct": 0.14,
+                "label_markers_offset_pct": 0,
+                "major_ticks_color": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "major_ticks_length_pct": 0.22,
+                "major_ticks_offset_pct": 0.18,
+                "major_ticks_thickness_pct": 0.05,
+                "major_ticks_value_interval": 25,
+                "mask_encoded_image": "",
+                "minor_ticks_color": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "minor_ticks_count": 4,
+                "minor_ticks_length_pct": 0.18,
+                "minor_ticks_offset_pct": 0.22,
+                "minor_ticks_thickness_pct": 0.02,
+                "movement_direction": "left-to-right",
+                "needle_color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "needle_encoded_image": "",
+                "needle_offset_pct": 0.63,
+                "needle_size_pct": [
+                  0.19,
+                  0.17
+                ],
+                "orientation": "horizontal",
+                "show_central_channel_name": false,
+                "show_central_channel_unit": false,
+                "show_central_value_label": true,
+                "show_channel_name": true,
+                "show_channel_unit": true,
+                "show_label_markers": false,
+                "show_major_ticks": false,
+                "show_minor_ticks": false,
+                "show_needle": false,
+                "show_sweep_line_drawing": true,
+                "sweep_line_properties": [
+                  [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1
+                  ],
+                  false,
+                  1.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "size_hint_x": 0.99609375,
+          "size_hint_y": 0.3238133547868061
+        },
+        {
+          "center_x": 0.11279296875,
+          "center_y": 0.3908627495260008,
+          "config": {
+            "Channel": {
+              "channel": "OilPress",
+              "overrides": {
+                "OilPress": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 8.0,
+                  "min_value": 0,
+                  "precision": 1
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          },
+          "size_hint_x": 0.2177734375,
+          "size_hint_y": 0.17497988736926812
+        },
+        {
+          "center_x": 0.1160546875,
+          "center_y": 0.20432119675249624,
+          "config": {
+            "Channel": {
+              "channel": "TransTemp",
+              "overrides": {
+                "OilTemp": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 130.0,
+                  "min_value": 50.0,
+                  "precision": 0
+                },
+                "TransTemp": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 150,
+                  "min_value": 50,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          },
+          "size_hint_x": 0.216796875,
+          "size_hint_y": 0.1761866452131938
+        },
+        {
+          "center_x": 0.11328125,
+          "center_y": 0.5768302493966213,
+          "config": {
+            "Channel": {
+              "channel": "Coolant",
+              "overrides": {
+                "Coolant": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 110.0,
+                  "min_value": 20,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          },
+          "size_hint_x": 0.21875,
+          "size_hint_y": 0.17618664521319402
+        },
+        {
+          "center_x": 0.11181640625,
+          "center_y": 0.07772727272727273,
+          "config": {
+            "Channel": {
+              "channel": "FuelUsed",
+              "overrides": {
+                "Battery": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 16.0,
+                  "min_value": 10.0,
+                  "precision": 1
+                },
+                "FuelLevel": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 100,
+                  "min_value": 0,
+                  "precision": 0
+                },
+                "FuelUsed": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 120.0,
+                  "min_value": 0.0,
+                  "precision": 1
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          },
+          "size_hint_x": 0.2177734375,
+          "size_hint_y": 0.15545454545454546
+        },
+        {
+          "center_x": 0.71619140625,
+          "center_y": 0.5280008593935002,
+          "config": {
+            "Channel": {},
+            "Gauge Type": {
+              "gauge": "Time Delta"
+            }
+          },
+          "size_hint_x": 0.2509765625,
+          "size_hint_y": 0.29082864038616263
+        },
+        {
+          "center_x": 0.40771484375,
+          "center_y": 0.4777584884711108,
+          "config": {
+            "Channel": {
+              "channel": "PredTime",
+              "overrides": {
+                "LapTime": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 0.0,
+                  "min_value": 0.0,
+                  "precision": 2
+                },
+                "PredTime": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.025,
+                    0.2,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 0.0,
+                  "min_value": 0.0,
+                  "precision": 2
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          },
+          "size_hint_x": 0.3642578125,
+          "size_hint_y": 0.3853580048270313
+        },
+        {
+          "center_x": 0.364609375,
+          "center_y": 0.14552801732587495,
+          "config": {
+            "Channel": {
+              "channel": "CurrentLap",
+              "overrides": {
+                "CurrentLap": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 0,
+                  "min_value": 0,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Heat": {},
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {},
+            "X Axis": {
+              "channel": "AccelZ"
+            },
+            "Y Axis": {}
+          },
+          "size_hint_x": 0.26171875000000006,
+          "size_hint_y": 0.19846344205915709
+        },
+        {
+          "center_x": 0.60974609375,
+          "center_y": 0.13208921225921694,
+          "config": {
+            "Channel": {
+              "channel": "SessionTime",
+              "overrides": {
+                "SessionTime": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 0.0,
+                  "min_value": 0.0,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          },
+          "size_hint_x": 0.2976953125,
+          "size_hint_y": 0.2544318358244768
+        },
+        {
+          "center_x": 0.878125,
+          "center_y": 0.24512670565302142,
+          "config": {
+            "Channel": {
+              "channel": "Lambda",
+              "overrides": {
+                "Lambda": {
+                  "autoselect_color": true,
+                  "base_color": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "max_value": 1.1,
+                  "min_value": 0.5,
+                  "precision": 2
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Analog"
+            },
+            "Settings": {
+              "visual_settings": {
+                "angle_end": 90,
+                "angle_start": -180,
+                "assets_md5_hash": {
+                  "background": "",
+                  "font": "",
+                  "mask": "",
+                  "needle": ""
+                },
+                "background_color": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "background_encoded_image": "",
+                "central_markers_color": [
+                  [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                ],
+                "central_markers_font_size_pct": [
+                  0.2,
+                  0.08
+                ],
+                "central_markers_offsets_pct": [
+                  [
+                    0.5,
+                    0.5
+                  ],
+                  [
+                    0.5,
+                    0.25
+                  ]
+                ],
+                "channel_alert_element": "sweep",
+                "channel_value_multiplier": 1,
+                "extra_angle": 0.0,
+                "label_markers_color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "label_markers_font_size_pct": 0.07,
+                "label_markers_offset_pct": 0.15,
+                "major_ticks_color": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "major_ticks_height_pct": 0.1,
+                "major_ticks_offset_pct": 0.0,
+                "major_ticks_value_interval": 0,
+                "major_ticks_width_pct": 0.06,
+                "minor_ticks_color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "minor_ticks_count": 0,
+                "minor_ticks_height_pct": 0.06,
+                "minor_ticks_offset_pct": 0,
+                "minor_ticks_width_pct": 0.01,
+                "needle_color": [
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                "needle_encoded_image": "",
+                "needle_offset_pct": -0.1,
+                "needle_size_pct": [
+                  0.1,
+                  0.514
+                ],
+                "show_central_channel_name": true,
+                "show_central_channel_unit": false,
+                "show_central_value_label": true,
+                "show_label_markers": false,
+                "show_major_ticks": false,
+                "show_minor_ticks": false,
+                "show_needle": false,
+                "show_sweep_line_drawing": true,
+                "sweep_line_properties": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.5
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  false,
+                  0.13,
+                  0.0
+                ],
+                "value_markers_encoded_font": ""
+              }
+            }
+          },
+          "size_hint_x": 0.24374999999999997,
+          "size_hint_y": 0.49025341130604283
+        },
+        {
+          "center_x": 0.920625,
+          "center_y": 0.601120857699805,
+          "config": {
+            "Channel": {
+              "channel": "RevLimit",
+              "overrides": {
+                "RevLimit": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 8000,
+                  "min_value": 0,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.8784313725490196,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          },
+          "size_hint_x": 0.15874999999999997,
+          "size_hint_y": 0.27339181286549713
+        }
+      ],
+      "locked": true
+    },
+    "dashboard_fd02a892-d2fb-11ea-b330-60a44c5f184c": {
+      "dash_name": "Raw Channels",
+      "dash_type": "freeform",
+      "gauges": [
+        {
+          "center_x": 0.5,
+          "center_y": 0.5,
+          "config": {
+            "Gauge Type": {
+              "gauge": "Raw Channels"
+            }
+          },
+          "size_hint_x": 1,
+          "size_hint_y": 1
+        }
+      ],
+      "locked": true
+    }
+  },
+  "dashboard_bar": {
+    "gauges": {
+      "gauges": [
+        {
+          "config": {
+            "Channel": {
+              "channel": "Battery",
+              "overrides": {
+                "Battery": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 16.0,
+                  "min_value": 10.0,
+                  "precision": 1
+                },
+                "FuelLevel": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 100,
+                  "min_value": 0,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          }
+        },
+        {
+          "config": {
+            "Channel": {
+              "channel": "SteerLevel",
+              "overrides": {
+                "AccelY": {},
+                "KnockCount": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 1000,
+                  "min_value": 0,
+                  "precision": 0
+                },
+                "Speed": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 125.0,
+                  "min_value": 0.0,
+                  "precision": 0
+                },
+                "SteerLevel": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 10,
+                  "min_value": 1,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          }
+        },
+        {
+          "config": {
+            "Channel": {
+              "channel": "Speed",
+              "overrides": {
+                "Boost": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 20.0,
+                  "min_value": 0,
+                  "precision": 1
+                },
+                "LamProtect": {
+                  "autoselect_color": true,
+                  "base_color": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "max_value": 1,
+                  "min_value": 0,
+                  "precision": 2
+                },
+                "Lambda": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 1.1,
+                  "min_value": 0.5,
+                  "precision": 2
+                },
+                "SessionTime": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 0.0,
+                  "min_value": 0.0,
+                  "precision": 0
+                },
+                "Speed": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 200.0,
+                  "min_value": 0.0,
+                  "precision": 0
+                },
+                "WS_LF": {
+                  "autoselect_color": false,
+                  "base_color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "max_value": 250.0,
+                  "min_value": 0.0,
+                  "precision": 0
+                }
+              }
+            },
+            "Gauge Type": {
+              "gauge": "Digital"
+            },
+            "Settings": {
+              "visual_settings": {
+                "assets_md5_hash": {
+                  "background": ""
+                },
+                "background_color": [
+                  0.5,
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "background_encoded_image": "",
+                "channel_alert_element": "background",
+                "channel_labels_colors": [
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    0.8784313725490196,
+                    1.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "channel_labels_font_size_pct": [
+                  0.5,
+                  0.25,
+                  0.0
+                ],
+                "channel_name_position": "bottom",
+                "channel_unit_position": "top",
+                "corner_radius_pct": 0.5,
+                "gauge_grouping_layout": [
+                  1,
+                  4
+                ],
+                "outline_color": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "outline_thickness_pct": 0.05,
+                "show_channel_name": true,
+                "show_channel_unit": false,
+                "show_outline": false
+              }
+            },
+            "Text Values": {}
+          }
+        }
+      ]
+    }
+  },
+  "general_prefs": {
+    "analysis_map": {
+      "track_selections": "5149e39de4945b6b069c93e4"
+    },
+    "analysis_preferences": {
+      "selected_analysis_channels": "Speed",
+      "selected_sessions_laps": "{\"sessions\":{}}"
+    },
+    "dashboard_preferences": {
+      "alerts_dwell_time": "2",
+      "alerts_minimize_time": "5",
+      "camera_preferences": "{'0': '', '1': ''}",
+      "last_channel_meta": "[{\"nm\": \"Interval\", \"ut\": \"ms\", \"min\": 0, \"max\": 0, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"Utc\", \"ut\": \"ms\", \"min\": 0, \"max\": 0, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"ElapsedTime\", \"ut\": \"Min\", \"min\": 0.0, \"max\": 0.0, \"prec\": 4, \"sr\": 10, \"type\": 0}, {\"nm\": \"Battery\", \"ut\": \"Volts\", \"min\": 10.0, \"max\": 16.0, \"prec\": 2, \"sr\": 10, \"type\": 0}, {\"nm\": \"STFT1\", \"ut\": \"%\", \"min\": -25.0, \"max\": 25.0, \"prec\": 1, \"sr\": 10, \"type\": 0}, {\"nm\": \"STFT2\", \"ut\": \"%\", \"min\": -25.0, \"max\": 25.0, \"prec\": 1, \"sr\": 10, \"type\": 0}, {\"nm\": \"MAF\", \"ut\": \"gm/sec\", \"min\": 0.0, \"max\": 255.0, \"prec\": 1, \"sr\": 10, \"type\": 0}, {\"nm\": \"RPM\", \"ut\": \"\", \"min\": 0, \"max\": 8000, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"AccelPedal\", \"ut\": \"%\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"Coolant\", \"ut\": \"F\", \"min\": 60, \"max\": 110, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"IAT\", \"ut\": \"F\", \"min\": 0, \"max\": 60, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"Latitude\", \"ut\": \"Degrees\", \"min\": -180.0, \"max\": 180.0, \"prec\": 6, \"sr\": 25, \"type\": 0}, {\"nm\": \"Longitude\", \"ut\": \"Degrees\", \"min\": -180.0, \"max\": 180.0, \"prec\": 6, \"sr\": 25, \"type\": 0}, {\"nm\": \"Speed\", \"ut\": \"MPH\", \"min\": 0.0, \"max\": 150.0, \"prec\": 1, \"sr\": 25, \"type\": 0}, {\"nm\": \"AccelX\", \"ut\": \"G\", \"min\": -3.0, \"max\": 3.0, \"prec\": 2, \"sr\": 25, \"type\": 0}, {\"nm\": \"AccelY\", \"ut\": \"G\", \"min\": -3.0, \"max\": 3.0, \"prec\": 2, \"sr\": 25, \"type\": 0}, {\"nm\": \"GPSSats\", \"ut\": \"\", \"min\": 0, \"max\": 20, \"prec\": 0, \"sr\": 5, \"type\": 0}, {\"nm\": \"Gear\", \"ut\": \"\", \"min\": 0, \"max\": 10, \"prec\": 0, \"sr\": 10, \"type\": 0}, {\"nm\": \"WS_LF\", \"ut\": \"KPH\", \"min\": 0.0, \"max\": 250.0, \"prec\": 1, \"sr\": 25, \"type\": 0}, {\"nm\": \"WS_RF\", \"ut\": \"KPH\", \"min\": 0.0, \"max\": 250.0, \"prec\": 1, \"sr\": 25, \"type\": 0}, {\"nm\": \"WS_LR\", \"ut\": \"KPH\", \"min\": 0.0, \"max\": 250.0, \"prec\": 1, \"sr\": 25, \"type\": 0}, {\"nm\": \"WS_RR\", \"ut\": \"KPH\", \"min\": 0.0, \"max\": 250.0, \"prec\": 1, \"sr\": 25, \"type\": 0}, {\"nm\": \"BrakeSwitch\", \"ut\": \"\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"TransTemp\", \"ut\": \"C\", \"min\": 50, \"max\": 150, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"EngineTq\", \"ut\": \"Nm\", \"min\": -848.0, \"max\": 1199.0, \"prec\": 1, \"sr\": 25, \"type\": 0}, {\"nm\": \"CheckEngine\", \"ut\": \"\", \"min\": 0, \"max\": 7, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"PmuTempL\", \"ut\": \"C\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"PmuTempR\", \"ut\": \"C\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"PmuTotAmps\", \"ut\": \"A\", \"min\": 0, \"max\": 80, \"prec\": 0, \"sr\": 5, \"type\": 0}, {\"nm\": \"FpLiftAmps\", \"ut\": \"A\", \"min\": 0.0, \"max\": 15.0, \"prec\": 1, \"sr\": 5, \"type\": 0}, {\"nm\": \"FuelUseRoll\", \"ut\": \"L\", \"min\": 0.0, \"max\": 2.0, \"prec\": 3, \"sr\": 5, \"type\": 0}, {\"nm\": \"AltnDuty\", \"ut\": \"%\", \"min\": 0.0, \"max\": 100.0, \"prec\": 1, \"sr\": 5, \"type\": 0}, {\"nm\": \"OilStarve\", \"ut\": \"\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"AccelZ\", \"ut\": \"G\", \"min\": 0, \"max\": 2, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"AbsFault\", \"ut\": \"flag\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"FuelDry\", \"ut\": \"flag\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"WiperActive\", \"ut\": \"flag\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"IgnitionOn\", \"ut\": \"flag\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"YeetButton\", \"ut\": \"flag\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 5, \"type\": 0}, {\"nm\": \"FanSpeed\", \"ut\": \"%\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"RadioPtt\", \"ut\": \"flag\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"TPS\", \"ut\": \"%\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 10, \"type\": 0}, {\"nm\": \"OilPress\", \"ut\": \"bar\", \"min\": 0.0, \"max\": 10.0, \"prec\": 2, \"sr\": 10, \"type\": 0}, {\"nm\": \"HeadlightOn\", \"ut\": \"flag\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"AFR\", \"ut\": \"ratio\", \"min\": 0.0, \"max\": 20.0, \"prec\": 2, \"sr\": 10, \"type\": 0}, {\"nm\": \"Lambda\", \"ut\": \"ratio\", \"min\": 0.0, \"max\": 2.0, \"prec\": 3, \"sr\": 10, \"type\": 0}, {\"nm\": \"Wbo2Temp\", \"ut\": \"C\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 5, \"type\": 0}, {\"nm\": \"SteerLevel\", \"ut\": \"\", \"min\": 1, \"max\": 10, \"prec\": 0, \"sr\": 5, \"type\": 0}, {\"nm\": \"MAP\", \"ut\": \"KPa\", \"min\": 0, \"max\": 120, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"FuelRate\", \"ut\": \"g/s\", \"min\": 0.0, \"max\": 100.0, \"prec\": 2, \"sr\": 10, \"type\": 0}, {\"nm\": \"RevLimit\", \"ut\": \"1/min\", \"min\": 0, \"max\": 8000, \"prec\": 0, \"sr\": 5, \"type\": 0}, {\"nm\": \"StatABS\", \"ut\": \"\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"StatEBV\", \"ut\": \"\", \"min\": 0, \"max\": 1, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"AbsErr\", \"ut\": \"\", \"min\": 0, \"max\": 3, \"prec\": 0, \"sr\": 5, \"type\": 0}, {\"nm\": \"BRP_LF\", \"ut\": \"bar\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"BRP_RF\", \"ut\": \"bar\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"BRP_LR\", \"ut\": \"bar\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"BRP_RR\", \"ut\": \"bar\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"BRP\", \"ut\": \"bar\", \"min\": 0, \"max\": 100, \"prec\": 0, \"sr\": 25, \"type\": 0}, {\"nm\": \"FuelUsed\", \"ut\": \"L\", \"min\": 0.0, \"max\": 100.0, \"prec\": 2, \"sr\": 1, \"type\": 0}, {\"nm\": \"LastLapFuel\", \"ut\": \"L\", \"min\": 0.0, \"max\": 2.0, \"prec\": 2, \"sr\": 1, \"type\": 0}, {\"nm\": \"Remain\", \"ut\": \"\", \"min\": 0, \"max\": 50, \"prec\": 0, \"sr\": 1, \"type\": 0}, {\"nm\": \"LapCount\", \"ut\": \"\", \"min\": 0, \"max\": 0, \"prec\": 0, \"sr\": 10, \"type\": 0}, {\"nm\": \"LapTime\", \"ut\": \"Min\", \"min\": 0.0, \"max\": 0.0, \"prec\": 4, \"sr\": 10, \"type\": 0}, {\"nm\": \"Sector\", \"ut\": \"\", \"min\": 0, \"max\": 0, \"prec\": 0, \"sr\": 10, \"type\": 0}, {\"nm\": \"SectorTime\", \"ut\": \"Min\", \"min\": 0.0, \"max\": 0.0, \"prec\": 4, \"sr\": 10, \"type\": 0}, {\"nm\": \"PredTime\", \"ut\": \"Min\", \"min\": 0.0, \"max\": 0.0, \"prec\": 4, \"sr\": 5, \"type\": 0}, {\"nm\": \"CurrentLap\", \"ut\": \"\", \"min\": 0, \"max\": 0, \"prec\": 0, \"sr\": 10, \"type\": 0}, {\"nm\": \"Distance\", \"ut\": \"mi\", \"min\": 0.0, \"max\": 0.0, \"prec\": 4, \"sr\": 10, \"type\": 0}, {\"nm\": \"SessionTime\", \"ut\": \"Min\", \"min\": 0.0, \"max\": 0.0, \"prec\": 4, \"sr\": 10, \"type\": 0}, {\"nm\": \"BestLap\", \"ut\": \"Min\", \"min\": 0, \"max\": 0, \"prec\": 0, \"sr\": 1, \"type\": 4}, {\"nm\": \"LapDelta\", \"ut\": \"Min\", \"min\": 0, \"max\": 0, \"prec\": 0, \"sr\": 1, \"type\": 5}]",
+      "last_dash_screen": "dashboard_e0978240-af0d-11eb-a2a0-f402280c61c7",
+      "pitstoptimer_alert_speed": "10",
+      "pitstoptimer_enabled": "1",
+      "pitstoptimer_exit_speed": "30",
+      "pitstoptimer_trigger_speed": "5",
+      "pittocaralerts_enabled": "1",
+      "pittocaralerts_timeout": "30",
+      "remote_dash_nav_enabled": "1"
+    },
+    "help": {
+      "analysis_welcome": "False",
+      "can_mapping_help": "False",
+      "dashboard_gauge_help": "False",
+      "lap_setup": "False",
+      "rc_write_config": "False"
+    },
+    "preferences": {
+      "config_file_dir": "/home/pi/Documents",
+      "conn_type": "USB",
+      "dbc_file_dir": "/home/pi/Documents",
+      "display_orientation": "Sensor Landscape",
+      "distance_units": "miles",
+      "export_file_dir": "/home/pi/Documents",
+      "firmware_dir": "/home/pi/Documents",
+      "full_screen_mode": "0",
+      "global_help": "True",
+      "import_datalog_dir": "/home/pi/Documents",
+      "import_image_dir": "/home/pi/Documents",
+      "import_video_dir": "/home/pi/Documents",
+      "last_known_device": "/dev/ttyACM0",
+      "preset_file_dir": "/home/pi/Documents",
+      "record_session": "1",
+      "send_telemetry": "1",
+      "show_laptimes": "1",
+      "startup_screen": "Dashboard",
+      "temperature_units": "Fahrenheit"
+    },
+    "setup": {
+      "setup_enabled": "False"
+    },
+    "track_detection": {
+      "last_selected_track_id": "0",
+      "last_selected_track_timestamp": "0",
+      "user_cancelled_location": "47.627338,-121.960022"
+    }
+  }
+}
