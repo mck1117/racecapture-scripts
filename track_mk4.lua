@@ -18,6 +18,8 @@ function onTick()
     local currentLapNumber = getLapCount()
 
     local currentFuelRolling = getChannel('FuelUseRoll')
+    if currentFuelRolling == nil then return end
+
     if currentFuelRolling < lastFuelRolling then
         -- Either the ECU rebooted or used >2 liters of fuel
         -- Log the old rolling qty as used
