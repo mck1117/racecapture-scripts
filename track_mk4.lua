@@ -143,6 +143,7 @@ local function resetFuelToFull()
     setChannel(chFuelUsed, 0)
     setChannel(chLapFuel, 0)
     setChannel(chLapsRemaining, 0)
+    resetLapStats()
 end
 
 local function processFuelReset()
