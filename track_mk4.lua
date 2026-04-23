@@ -35,14 +35,22 @@ local function crc8(data, len)
     return crc
 end
 
+local function map(n, start1, stop1, start2, stop2)
+    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2
+end
+
+local mappedSave = 0
+
 -- Map SteerLevel (0-15) to 16-bit pump command
 local function mapValue()
     local level = getChannel("SteerLevel")
     if level == nil then level = 0 end
     -- Scale 0-15 to 0-65535
-    local mapped = math.floor((level / 15) * 65535)
+
+    local mapped = map(level, 10, 0, 10000, 24000)
     if mapped > 65535 then mapped = 65535 end
     if mapped < 0 then mapped = 0 end
+	mappedSave = mapped
     return mapped
 end
 
@@ -50,10 +58,9 @@ end
 -- ST2 pump state
 ---------------------------------------------------------------------
 local pumpMsgCount = 0
-local pumpStartDone = false
 local pumpAlive = false
 local pumpCounter = 0x00
-local lastPumpRxTime = 0
+local pumpStartTime = 0
 
 local st2_1 = {0x05, 0x23, 0x08, 0x6F, 0x08, 0x74, 0x00, 0x00}
 local st2_2 = {0xA0, 0xDD, 0x04, 0xFF, 0xFF, 0x05, 0x23, 0x00}
@@ -61,62 +68,34 @@ local st2_3 = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
 
 local function resetPumpState()
     pumpMsgCount = 0
-    pumpStartDone = false
     pumpAlive = false
     pumpCounter = 0x00
-    lastPumpRxTime = 0
     st2_3[5] = 0x00
     st2_3[6] = 0x00
     st2_3[7] = 0x00
     st2_3[8] = 0x00
 end
 
-local function checkPumpHeartbeat()
-    local now = getUptime()
-    while true do
-        local id, ext, data = rxCAN(0, 0)
-        if id == nil then break end
-        if id == 0x12C then
-            lastPumpRxTime = now
-            pumpAlive = true
-        end
-    end
-    if pumpAlive and (now - lastPumpRxTime) > 1000 then
-        println("Pump heartbeat lost - resetting")
-        resetPumpState()
-    end
-end
-
 local function doPump()
-    checkPumpHeartbeat()
+    local now = getUptime();
 
-    local engineRun = getChannel("EngineRun")
+    local engineRun = getChannel("IgnitionOn")
     if engineRun == nil or engineRun == 0 then
-        if pumpStartDone or pumpMsgCount > 0 then
-            resetPumpState()
-        end
+        resetPumpState()
+        pumpStartTime = now
         return
     end
 
-    if not pumpAlive then
-        return
+    local pumpRunTime = now - pumpStartTime
+
+    local mv = mapValue()
+
+    if pumpRunTime < 5000 then
+        mv = map(pumpRunTime, 0, 3000, 0, mv)
     end
 
-    if not pumpStartDone then
-        pumpMsgCount = pumpMsgCount + 1
-        if pumpMsgCount >= 20 then
-            pumpStartDone = true
-        end
-    end
-
-    if pumpStartDone then
-        local mv = mapValue()
-        st2_3[5] = bit.band(bit.rshift(mv, 8), 0xFF)
-        st2_3[6] = bit.band(mv, 0xFF)
-    else
-        st2_3[5] = 0x00
-        st2_3[6] = 0x00
-    end
+    st2_3[5] = bit.band(bit.rshift(mv, 8), 0xFF)
+    st2_3[6] = bit.band(mv, 0xFF)
 
     st2_1[7] = pumpCounter
     st2_3[7] = pumpCounter
@@ -201,6 +180,7 @@ function onTick()
     -- Fuel tracking runs every 10th tick (~5Hz)
     fuelTickCount = fuelTickCount + 1
     if fuelTickCount >= 10 then
+		println(mappedSave)
         fuelTickCount = 0
         doFuel()
     end
