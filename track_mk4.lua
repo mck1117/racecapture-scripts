@@ -79,7 +79,7 @@ end
 local function doPump()
     local now = getUptime();
 
-    local engineRun = getChannel("IgnitionOn")
+    local engineRun = getChannel("EngineRun")
     if engineRun == nil or engineRun == 0 then
         resetPumpState()
         pumpStartTime = now
